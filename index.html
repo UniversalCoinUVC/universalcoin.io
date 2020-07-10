@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col text-center">
                                 <h1><img src="assets/img/logo.png" width="40px" /> UniversalCoin</h1>
-                                <p>Globally Tradeable ERC20 Token on Ethereum Classic</p>
+                                <p>Globally Tradable ERC20 Token on Ethereum Classic</p>
                             </div>
                         </div>
                     </div>
@@ -77,13 +77,13 @@
                             <div class="card-body">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col text-left">
-                                            <h4 class="text-white"><span id="tokenBalance">00000</span> UVC</h4>
-                                            <small class="text-muted">My Balance</small>
+                                        <div class="col text-center">
+                                            <h4 class="text-white"><span id="tokenBalance">00000</span></h4>
+                                            <small class="text-white">My Balance</small>
                                         </div>
                                         
-                                        <div class="col text-left">
-                                            <h4><span id="totalSupply">0.0000</span> UVC</h4>
+                                        <div class="col text-center">
+                                            <h4><span id="totalSupply">0.0000</span></h4>
                                             <small>Total Supply</small>
                                         </div>
                                     </div>
@@ -146,10 +146,12 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-4">
+                                                <label>UVC to Send</label>
                                                 <input class="form-control roundedCorners" type="text" placeholder="UVC to Send" id="transferTokenCount" />
                                             </div>
                                             
                                             <div class="col-md-8">
+                                                <label>Recipient Address</label>
                                                 <input class="form-control roundedCorners" type="text" placeholder="Recipient Address" id="transferAddress" />
                                             </div>
                                         </div>
@@ -179,8 +181,9 @@
                                         <div class="row">
                                             <div class="col text-center">
                                                 <div class="row">
-                                                    <div class="col">
-                                                        <input class="form-control roundedCorners" type="text" placeholder="Amount of UVC to Burn" id="burnTokenCount" />
+                                                    <div class="col text-center">
+                                                        <label class="text-danger">Quantity of UVC to Burn</label>
+                                                        <input class="form-control roundedCorners text-left" type="text" placeholder="Amount of UVC to Burn" id="burnTokenCount" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,6 +242,48 @@
                 </div>
             </div>
         </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel roundedCorners text-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>UniversalCoin Dapp</b><br />
+                                <p>
+                                    This project and its code are Open Source, released under the MIT License. <a href="https://opensource.org/licenses/MIT" target="_blank">Click Here</a> to learn more.
+                                </p>
+                            </div>
+                        
+                            <div class="col-md-3">
+                                <b class="text-muted">SOCIAL</b><br />
+                                <a class="text-white" href="https://twitter.com/Universal_Coin" target="_blank">Twitter</a><br />
+                                <a class="text-white" href="https://discord.gg/" target="_blank">Discord</a><br />
+                            </div>
+                        
+                            <div class="col-md-3">
+                                <b class="text-muted">RESOURCES</b><br />
+                                <a class="text-white" href="https://github.com/UniversalCoin">GitHub</a><br />
+                                <a class="text-white" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank">Smart Contract</a><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <br />
+        <br />
+        <br />
+        
+        <!-- Bottom Nav -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
+        </nav>
+        
 
         <!-- Bootstrap core JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

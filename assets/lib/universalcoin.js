@@ -22,7 +22,7 @@ $(document).ready(function(){
         $("#bestBuyPrice").text(result.best_buy_price.substr(0,9));
         $("#bestSellOrder").text(result.best_sell_order);
         $("#bestSellPrice").text(result.best_sell_price.substr(0,9));
-        $("#totalSupply").text(result.total_supply.substr(0,11));
+        // $("#totalSupply").text(result.total_supply.substr(0,11));
         $("#volume24h").text(result.volume24hr.substr(0,4));
         $("#price24h").text(result.price24hr.substr(0,9));
         $("#currentPrice").text(result.dashboard_price.substr(0,9));
@@ -32,6 +32,17 @@ $(document).ready(function(){
 
 // "Animate" by changing the text with each animation step.
 function showBalance(el, value) {
+    $({ number: parseFloat(el.text().replace(/[^\d.]/g, '')) }).animate({number: value}, {
+        step: function () {
+            el.text(Math.floor(this.number).toLocaleString());
+        },
+        complete: function () {
+            el.text(Math.floor(this.number).toLocaleString());
+        },
+    });
+}
+
+function showTotalSupply(el, value) {
     $({ number: parseFloat(el.text().replace(/[^\d.]/g, '')) }).animate({
         number: value
     },{
@@ -45,12 +56,13 @@ function showBalance(el, value) {
 }
 
 // FUNCTION: Update UI (repeat every 1 second).
-function updateUI(balance) {
+function updateUI(balance, totalSupply) {
     window.setTimeout(function () {
-        updateUI(balance);
+        updateUI(balance, totalSupply);
     }, 1000);
     
     showBalance($('#tokenBalance'), balance.toNumber());
+    showTotalSupply($('#totalSupply'), totalSupply.toNumber());
 }
 
 /////////////////////////////////// TRANSFER FUNCTION ///////////////////////////////////
@@ -153,23 +165,28 @@ function loadData(blockNumber) {
     console.log("Loading data from contract...")
 
     var balance;
+    var totalSupply;
     
     function updateWhenDone() {
-        if (balance !== undefined) {
-            updateUI(balance.div(10**decimals));
-            console.log(balance.div(10**decimals));
+        if (balance !== undefined || totalSupply !== undefined) {
+            updateUI(balance.div(10**decimals), totalSupply.div(10**decimals));
+            console.log(balance.div(10**decimals), totalSupply.div(10**decimals));
         } else {
-            console.log("Error getting balance!")
+            console.log("Error getting Data!")
         }
     }
 
     // Get the token balance of the wallet currently enabled.
-    tokenContract.balanceOf.call(web3.eth.defaultAccount, {
-    }, blockNumber, function (err, _balance) {
+    tokenContract.balanceOf.call(web3.eth.defaultAccount, {}, blockNumber, function (err, _balance) {
         if (err) return error(err);
         balance = _balance;
         updateWhenDone();
-        alertify.success(_balance.toString() + " UVC");
+    });
+    
+    tokenContract.totalSupply.call(function (err, _totalSupply) {
+       if (err) return error(err);
+        totalSupply = _totalSupply;
+        updateWhenDone();
     });
 }
 
