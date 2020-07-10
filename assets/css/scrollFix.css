@@ -1,0 +1,9 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.headerbg {
+  background-image: url('../img/carousel/image1.png');
+  background-size: cover;
+}

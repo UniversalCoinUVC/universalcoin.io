@@ -1,0 +1,15 @@
+/* 0,0,0,0 - top left, top right, bottom right, bottom left */
+
+.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 10px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
+.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
+
+.rcTop          {border-radius: 10px 10px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 10px 10px;}
+
+.rcLeft         {border-radius: 10px  0px  0px 10px;}
+.rcRight        {border-radius:  0px 10px 10px  0px;}
+
+.rcAll          {border-radius: 10px 10px 10px 10px;}
+.rcNone         {border-radius:  0px  0px  0px  0px;}

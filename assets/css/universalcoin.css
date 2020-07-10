@@ -1,0 +1,66 @@
+.darkNavbar {
+    background-color: #000;
+}
+
+body {
+    background-color: #000;
+}
+
+.wallpaper {
+    background: rgb(33,33,33);
+    background: linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(89,0,255,1) 8%, rgba(0,0,0,1) 100%);
+}
+
+.arcadiumFont {
+    font-family: 'Black Ops One', cursive;
+}
+
+.redBorder {border: solid #ff004e;}
+.silverBorder {border: solid #b4b4b4;}
+.orangeBorder {border: solid #e26714;}
+.blueBorder {border: solid #009dff;}
+.greenBorder {border: solid #00ff62;}
+.yellowBorder {border: solid #fff500;}
+.whiteBorder {border: solid #ffffff;}
+
+.glassPanel {
+    background-color: rgba(0,0,0,0.65);
+}
+
+.floatingButton {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+ 
+.floatingButton:hover {
+   box-shadow: 0 6px 14px 0 #000089;
+   transform: scale(1.05);
+}
+
+/* Rounded Corner FX */
+/* 0,0,0,0 - top left, top right, bottom right, bottom left */
+.rcTopLeft      {border-radius: 10px  0px  0px  0px;}
+.rcTopRight     {border-radius:  0px 10px  0px  0px;}
+.rcBottomLeft   {border-radius:  0px  0px  0px 10px;}
+.rcBottomRight  {border-radius: 10px  0px 10px  0px;}
+
+.rcTop          {border-radius: 10px 10px  0px  0px;}
+.rcBottom       {border-radius:  0px  0px 10px 10px;}
+
+.rcLeft         {border-radius: 10px  0px  0px 10px;}
+.rcRight        {border-radius:  0px 10px 10px  0px;}
+
+.roundedCorners {border-radius: 10px 10px 10px 10px;}
+.rcNone         {border-radius:  0px  0px  0px  0px;}
