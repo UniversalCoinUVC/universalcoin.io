@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="UniversalCoin | universalcoin.io">
+        <meta name="author" content="UniversalCoin">
+
+        <title>UniversalCoin</title>
+
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/css/universalcoin.css" rel="stylesheet">
+
+        <script src="../assets/js/modernizr.min.js"></script>
+        
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body class="wallpaper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000;">
+                <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" width="40px" /> UniversalCoin</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                       <li class="nav-item"><a class="nav-link" href="uvc.html"><i class="fas fa-user text-success"></i> My UVC</a></li>
+                       <li class="nav-item"><a class="nav-link" href="uvcx.html"><i class="fas fa-user-lock text-success"></i> Staking (UVCX)</a></li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-success"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/Universal_Coin" target="_blank"><i class="fab fa-twitter text-success"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/UniversalCoin" target="_blank"><i class="fab fa-github text-success"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank"><i class="fas fa-search-dollar text-success"></i> Contract</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main id="content" role="main">
+            <div class="container" style="padding-top: 100px;">
+                <div class="row jumbotron glassPanel roundedCorners text-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <img src="../assets/img/logo.png" width="40px" height="40px" />
+                                <h1>UniversalCoin X</h1>
+                                <p>UVCX - an ERC20 Staking Token for UniversalCoin Holders</p>
+                                <p class="text-success">You have <span id="myTokens">-</span> UVCX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="card text-white glassPanel greenBorder roundedCorners">
+                            <div class="card-header text-left"><h5>My UVCX Staking</h5></div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3><span id="myFrozen">-</span></h3>
+                                        <small>Your Staked UVCX</small>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <h3><span id="myDividends">-</span></h3>
+                                        <small>Your Earnings</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-block btn-md btn-success roundedCorners" id="withdraw">Withdraw Earnings to Wallet</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <div class="col-md-6 text-center">
+                        <div class="card text-white glassPanel silverBorder roundedCorners">
+                            <div class="card-header text-left"><h5>UVCX Stats &amp; Info</h5></div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3><span id="totalFrozen">-</span></h3>
+                                        <small>Total Staked UVCX</small>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <h3><span id="totalSupply">-</span></h3>
+                                        <small>Remaining Supply</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-md btn-dark roundedCorners" href="https://blockscout.com/etc/mainnet/address/0xd6dF0C579f2A65049a893fDaEC9fCE098CC19F87/contracts" target="_blank">View Contract</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                
+                
+                
+                <div class="row">
+                    <!-- Stake SUVC -->
+                    <div class="col-md-3">
+                        <div class="card text-white glassPanel greenBorder roundedCorners">
+                            <div class="card-header">Stake UVCX</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-left">
+                                            <p>100 Tokens Minimum</p>
+                                            <label>UVCX to Stake: </label>
+                                            <input type="text" class="form-control" placeholder="100" id="freezeAmount" /><br />
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button class="btn btn-block btn-md btn-success roundedCorners" id="freeze">Stake</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <!-- Unstake SUVC -->
+                    <div class="col-md-3">
+                        <div class="card text-white glassPanel redBorder roundedCorners">
+                            <div class="card-header">Unstake UVCX</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-left">
+                                            <p>1% Unstake Tax</p>
+                                            <label>UVCX to Unstake: </label>
+                                            <input type="text" class="form-control" placeholder="100" id="unfreezeAmount" /><br />
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button class="btn btn-block btn-md btn-danger roundedCorners" id="unfreeze">Unstake</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    
+                    <!-- Transfer SUVC -->
+                    <div class="col-md-6">
+                        <div class="card text-white glassPanel orangeBorder roundedCorners">
+                            <div class="card-header">Transfer UVCX</div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4 text-left">
+                                            <label>UVCX to Transfer: </label>
+                                            <input type="text" class="form-control" placeholder="100" id="transferAmount" /><br />
+                                        </div>
+                                        
+                                        <div class="col-md-8 text-left">
+                                            <label>Recipient Address: </label>
+                                            <input type="text" class="form-control" placeholder="100" id="transferReceiver" /><br />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <p>1&#37; Transfer Tax</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <button class="btn btn-block btn-md btn-warning roundedCorners" id="transfer">Transfer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+            </div>
+            
+            <!-- Bottom Nav -->
+            <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+                <ul class="navbar-nav mr-auto ml-auto">
+                    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                    <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+                </ul>
+            </nav>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <div class="row jumbotron glassPanel roundedCorners text-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>UniversalCoin Dapp</b><br />
+                                <p>
+                                    This project and its code are Open Source, released under the MIT License. <a class="text-success" href="https://opensource.org/licenses/MIT" target="_blank">Click Here</a> to learn more.
+                                </p>
+                            </div>
+                        
+                            <div class="col-md-3">
+                                <b class="text-muted">SOCIAL</b><br />
+                                <a class="text-white" href="https://twitter.com/Universal_Coin" target="_blank">Twitter</a><br />
+                                <a class="text-white" href="https://discord.gg/" target="_blank">Discord</a><br />
+                            </div>
+                        
+                            <div class="col-md-3">
+                                <b class="text-muted">RESOURCES</b><br />
+                                <a class="text-white" href="https://github.com/UniversalCoin">GitHub</a><br />
+                                <a class="text-white" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank">Smart Contract</a><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="../assets/js/tether.min.js"></script>
+        <script src="../assets/js/common.min.js"></script>
+        <script src="../assets/js/d3.v5.min.js"></script>
+        <script src="../assets/js/alertify.min.js"></script>
+        <script src="../assets/js/semantic.min.js"></script>
+        <script src="../assets/js/moment.min.js"></script>
+        <script src="../assets/js/web3.min.js"></script>
+        <script src="../assets/js/clipboard.min.js"></script>
+        <script src="../assets/js/lodash.min.js"></script>
+        <script src="../assets/js/popper.min.js"></script>
+
+        <script src="../assets/lib/universalcoin-staking.js"></script>
+    </body>
+</html>

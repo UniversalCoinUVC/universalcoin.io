@@ -27,14 +27,15 @@
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                       
+                       <li class="nav-item"><a class="nav-link" href="tokens/uvc.html"><i class="fas fa-user text-success"></i> My UVC</a></li>
+                       <li class="nav-item"><a class="nav-link" href="tokens/uvcx.html"><i class="fas fa-user-lock text-success"></i> Staking (UVCX)</a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-white"></i> Discord</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/Universal_Coin" target="_blank"><i class="fab fa-twitter text-white"></i> Twitter</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/UniversalCoin" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank"><i class="fas fa-search-dollar text-white"></i> Contract</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-success"></i> Discord</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://twitter.com/Universal_Coin" target="_blank"><i class="fab fa-twitter text-success"></i> Twitter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/UniversalCoin" target="_blank"><i class="fab fa-github text-success"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank"><i class="fas fa-search-dollar text-success"></i> Contract</a></li>
                     </ul>
                 </div>
             </nav>
@@ -47,199 +48,71 @@
                         <div class="row">
                             <div class="col text-center">
                                 <h1><img src="assets/img/logo.png" width="40px" /> UniversalCoin</h1>
-                                <p>Globally Tradable ERC20 Token on Ethereum Classic</p>
+                                <p>Share-based Project Platform and Community on ETC</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                        <div class="col text-center">
-                            <div class="alert alert-dismissible alert-success roundedCorners animated fadeInDown delay-2s">
-                                <a href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-dark"></i> <strong>HEY!</strong> Join our Discord Server, and be a part of the Community! <i class="fab fa-discord text-dark"></i></a>
-                                </div>
+                    <div class="col text-center">
+                        <div class="alert alert-dismissible glassPanel roundedCorners animated fadeInDown delay-2s">
+                            <a href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-success"></i> <strong>HEY!</strong> Join our Discord Server, and be a part of the Community! <i class="fab fa-discord text-success"></i></a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a class="btn btn-block btn-primary btn-outline-light text-white text-center roundedCorners animated fadeInLeft delay-2s" href="https://www.saturn.network/token/ETC/0x76d0184cf511788032a74a1fb91146e63f43dd53" target="_blank">Trade on Saturn DEX</a><br />
-                        </div>
-                            
-                        <div class="col-md-6">
-                            <a class="btn btn-block btn-info btn-outline-light text-white text-center roundedCorners animated fadeInRight delay-2s" href="https://blockscout.com/etc/mainnet/address/0x76d0184CF511788032A74a1FB91146e63F43dd53/contracts" target="_blank">View on Blockscout</a><br />
-                        </div>
-                    </div>
+                </div>
                 
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card glassPanel roundedCorners text-white">
-                            <div class="card-header"><h4><i class="fas fa-wallet"></i> My UVC</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4 class="text-white"><span id="tokenBalance">00000</span></h4>
-                                            <small class="text-white">My Balance</small>
-                                        </div>
-                                        
-                                        <div class="col text-center">
-                                            <h4><span id="totalSupply">0.0000</span></h4>
-                                            <small>Total Supply</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
+                        <a class="btn btn-lg btn-block glassPanel btn-outline-success text-white roundedCorners" href="tokens/uvc.html">My UVC</a><br />
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="card glassPanel roundedCorners text-white">
-                            <div class="card-header"><h4><i class="fas fa-coins text-white"></i> Market Data</h4></div>
-                            <div class="card-body">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                            <h4>
-                                                <span class="text-success">
-                                                    <span id="price24h"></span> ETC
-                                                </span>
-                                                <small><i>(<span id="changePercent"></span>%)</i></small>
-                                            </h4>
-                                            <small class="text-muted">24Hr Vol: <span id="volume24h"></span> ETC</small><br />
-                                                
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col text-center">
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
+                        <a class="btn btn-lg btn-block glassPanel btn-outline-success text-white roundedCorners" href="tokens/uvcx.html">My UVCX</a><br />
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <form id="transferForm">
-                            <div class="card glassPanel roundedCorners text-white">
-                                <div class="card-header"><h4>Transfer UVC</h4></div>
-                                <div class="card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label>UVC to Send</label>
-                                                <input class="form-control roundedCorners" type="text" placeholder="UVC to Send" id="transferTokenCount" />
-                                            </div>
-                                            
-                                            <div class="col-md-8">
-                                                <label>Recipient Address</label>
-                                                <input class="form-control roundedCorners" type="text" placeholder="Recipient Address" id="transferAddress" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-footer">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <button class="btn btn-block btn-md btn-success roundedCorners" type="submit" id="transfer">Send UVC</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <br />
+                <div class="row text-white">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/savings.png" width="100px" height="100px" />
+                        <h3 class="text-white">HODL &amp; Earn</h3>
+                        <p>Holders of UniversalCoin (UVC) automatically have shares in future UniversalCoin projects reserved for them.</p>
                     </div>
                     
-                    <div class="col-md-6">
-                        <form id="burnForm">
-                            <div class="card glassPanel roundedCorners text-white">
-                                <div class="card-header"><h4>Burn UVC</h4></div>
-                                <div class="card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <div class="row">
-                                                    <div class="col text-center">
-                                                        <label class="text-danger">Quantity of UVC to Burn</label>
-                                                        <input class="form-control roundedCorners text-left" type="text" placeholder="Amount of UVC to Burn" id="burnTokenCount" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                                <div class="card-footer">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col">
-                                                <button class="btn btn-block btn-md btn-danger roundedCorners" type="submit">Burn UVC</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <br />
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/transparent.png" width="100px" height="100px" />
+                        <h3 class="text-white">Verified Contracts</h3>
+                        <p>UniversalCoin is proud to publish and verify Contract source code, for added transparency and peace of mind.</p>
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/phone.png" width="100px" height="100px" />
+                        <h3 class="text-white">Mobile Friendly</h3>
+                        <p>UniversalCoin Dapps &amp; websites are designed with mobile devices first in mind, scaled up for computers!</p>
                     </div>
                 </div>
+                <br />
                 
-                <div class="row">
-                        <div class="col-md-6 text-center">
-                            <div class="jumbotron glassPanel roundedCorners">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <h6 class="text-success"><span id="bestBuyPrice"></span> ETC</h6>
-                                        <small>Best Buy Price</small>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <h6 class="text-success"><span id="bestBuyOrder"></span> UVC</h6>
-                                        <small>Best Buy Order</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        
-                        <div class="col-md-6 text-center">
-                            <div class="jumbotron glassPanel roundedCorners">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <h6 class="text-danger"><span id="bestSellPrice"></span> ETC</h6>
-                                        <small>Best Sell Price</small>
-                                    </div>
-                                    
-                                    <div class="col text-center">
-                                        <h6 class="text-danger"><span id="bestSellOrder"></span> UVC</h6>
-                                        <small>Best Sell Order</small>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row text-white">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/computer.png" width="100px" height="100px" />
+                        <h3 class="text-white">Open Source</h3>
+                        <p>Anyone can build upon the UniversalCoin infrastructure - our DApp source code is open and freely accessible on GitHub.</p>
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/logo.png" width="100px" height="100px" />
+                        <h3 class="text-white">Listed on Saturn</h3>
+                        <p>UVC is tradable on Saturn Network, one of the greatest Decentralised Exchanges available, No-KYC!</p>
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/forever.png" width="100px" height="100px" />
+                        <h3 class="text-white">Progression</h3>
+                        <p>As UniversalCoin grows, be on the lookout for updates to the roadmap &amp; progression of the project.</p>
                     </div>
                 </div>
+                <br />
             </div>
         </main>
         
@@ -251,7 +124,7 @@
                             <div class="col-md-6">
                                 <b>UniversalCoin Dapp</b><br />
                                 <p>
-                                    This project and its code are Open Source, released under the MIT License. <a href="https://opensource.org/licenses/MIT" target="_blank">Click Here</a> to learn more.
+                                    This project and its code are Open Source, released under the MIT License. <a class="text-success" href="https://opensource.org/licenses/MIT" target="_blank">Click Here</a> to learn more.
                                 </p>
                             </div>
                         
