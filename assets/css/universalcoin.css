@@ -7,12 +7,23 @@ body {
 }
 
 .wallpaper {
+    background: rgb(221,221,221);
+    background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(20,20,20,1) 100%);
+}
+
+.uvcWallpaper {
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 30%, rgba(93,255,128,1) 100%); 
 }
 
-.arcadiumFont {
-    font-family: 'Black Ops One', cursive;
+.uvcxWallpaper {
+    background: rgb(214,54,54);
+    background: linear-gradient(180deg, rgba(214,54,54,1) 0%, rgba(20,20,20,1) 100%); 
+}
+
+.homeWallpaper {
+    background: rgb(54,61,214);
+    background: linear-gradient(180deg, rgba(54,61,214,1) 0%, rgba(20,20,20,1) 100%); 
 }
 
 .redBorder {border: solid #ff004e;}
