@@ -66,12 +66,12 @@ function update() {
     UVCXStaking.allInfoFor.call(account, function(error, info) {
         if (!error) {
             console.log(info);
-            $('#totalSupply').text(formatNumber(parseFloat(web3.fromWei(info[0], 'ether')), 2));
-            $('#totalFrozen').text(formatNumber(parseFloat(web3.fromWei(info[1], 'ether')), 2));
-            $('#myTokens').text(formatNumber(parseFloat(web3.fromWei(info[2], 'ether')), 2));
-            $('#myFrozen').text(formatNumber(parseFloat(web3.fromWei(info[3], 'ether')), 2));
-            $('#myDividends').text(formatNumber(parseFloat(web3.fromWei(info[4], 'ether')), 2));
-            $('#withdrawAmount').text(formatNumber(parseFloat(web3.fromWei(info[4], 'ether')), 0));
+            $('#totalSupply').text(numberWithCommas(web3.fromWei(info[0]).toFixed(0)));
+            $('#totalFrozen').text(numberWithCommas(web3.fromWei(info[1]).toFixed(0)));
+            $('#myTokens').text(numberWithCommas(web3.fromWei(info[2]).toFixed(0)));
+            $('#myFrozen').text(numberWithCommas(web3.fromWei(info[3]).toFixed(0)));
+            $('#myDividends').text(numberWithCommas(web3.fromWei(info[4]).toFixed(0)));
+            $('#withdrawAmount').text(numberWithCommas(web3.fromWei(info[4]).toFixed(0)));
         } else {
             console.log(error);
         }
