@@ -17,7 +17,7 @@
         <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
     </head>
     
-    <body class="uvcxWallpaper">
+    <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000;">
                 <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="40px" /> UniversalCoin</a>
@@ -27,39 +27,86 @@
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
-                       <li class="nav-item"><a class="nav-link" href="uvc.html"><i class="fas fa-user text-success"></i> My UVC</a></li>
-                       <li class="nav-item"><a class="nav-link" href="staking.html"><i class="fas fa-user-lock text-danger"></i> Staking (UVCX)</a></li>
+                       <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="fas fa-user text-white"></i> Dashboard</a></li>
                     </ul>
                     
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="https://discord.gg/pupjXVJ" target="_blank"><i class="fab fa-discord text-white"></i> Discord</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://twitter.com/Universal_Coin" target="_blank"><i class="fab fa-twitter text-white"></i> Twitter</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/UniversalCoinUVC" target="_blank"><i class="fab fa-github text-white"></i> GitHub</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://blockscout.com/etc/mainnet/address/0xd6dF0C579f2A65049a893fDaEC9fCE098CC19F87/contracts" target="_blank"><i class="fas fa-search-dollar text-white"></i> Contract</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         
         <main id="content" role="main">
-            <div class="container" style="padding-top: 100px;">
-                <div class="row jumbotron glassPanel roundedCorners text-white">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center">
-                                <img src="assets/img/uvcx.png" width="40px" height="40px" />
-                                <h1>UniversalCoin X</h1>
-                                <p>UVCX - an ERC20 Staking Token for UniversalCoin Holders</p>
-                                <p class="text-success">You have <span id="myTokens">-</span> UVCX</p>
-                            </div>
+            <div class="jumbotron glassPanel roundedCorners text-white" style="padding-top: 100px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>Hello, <span class="username">User</span></h1>
+                            <p>You&apos;ve earned <span id="myDividends">-</span> UVCX</p>
+                            <button type="button" class="btn btn-md btn-success roundedCorners" id="withdraw">Withdraw to Wallet</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="#" data-toggle="modal" data-target="#detailsModal" onclick="showTokenModal(UVC)">
+                            <div class="card glassPanel roundedCorners">
+                                <div class="card-body">
+                                    <h5 class="text-light"><img src="assets/img/logo.png" width="25px" height="25px" /> <b><span class="uvcBalance">0</span></b></h5>
+                                    <small>UniversalCoin</small>
+                                </div>
+                            </div>
+                        </a>
+                        <br />
+                    </div> 
+                    
+                    <div class="col text-center">
+                        <a href="#" data-toggle="modal" data-target="#detailsModal" onclick="showTokenModal(UVCX)">
+                            <div class="card glassPanel roundedCorners">
+                                <div class="card-body">
+                                    <h5 class="text-light"><img src="assets/img/uvcx.png" width="25px" height="25px" /> <b><span class="uvcxBalance">0</span></b></h5>
+                                    <small>UniversalCoin X</small>
+                                </div>
+                            </div>
+                        </a>
+                        <br />
+                    </div>
+                    
+                    <div class="col text-center">
+                        <a href="#" data-toggle="modal" data-target="#detailsModal" onclick="showTokenModal(STRN)">
+                            <div class="card glassPanel roundedCorners">
+                                <div class="card-body">
+                                    <h5 class="text-light"><img src="assets/img/saturn.png" width="25px" height="25px" /> <b><span class="strnBalance">0</span></b></h5>
+                                    <small>Saturn Classic DAO</small>
+                                </div>
+                            </div>
+                        </a>
+                        <br />
+                    </div>
+                    
+                    <div class="col text-center">
+                        <a href="#" data-toggle="modal" data-target="#detailsModal" onclick="showTokenModal(FWT)">
+                            <div class="card glassPanel roundedCorners">
+                                <div class="card-body">
+                                    <h5 class="text-light"><img src="assets/img/flux.png" width="25px" height="25px" /> <b><span class="fwtBalance">0</span></b></h5>
+                                    <small>FluxWallet (FWT)</small>
+                                </div>
+                            </div>
+                        </a>
+                        <br />
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-6 text-center">
+                    <div class="col text-center">
                         <div class="card text-white glassPanel silverBorder roundedCorners">
-                            <div class="card-header text-left"><h5>My UVCX Staking</h5></div>
+                            <div class="card-header">Stats &amp; Info</div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col text-center">
@@ -67,28 +114,6 @@
                                         <small>Your Staked UVCX</small>
                                     </div>
                                     
-                                    <div class="col text-center">
-                                        <h3><span id="myDividends">-</span></h3>
-                                        <small>Your Earnings</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <button type="button" class="btn btn-block btn-md btn-success roundedCorners" id="withdraw">Withdraw Earnings to Wallet</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                    </div>
-                    
-                    <div class="col-md-6 text-center">
-                        <div class="card text-white glassPanel silverBorder roundedCorners">
-                            <div class="card-header text-left"><h5>UVCX Stats &amp; Info</h5></div>
-                            <div class="card-body">
-                                <div class="row">
                                     <div class="col text-center">
                                         <h3><span id="totalFrozen">-</span></h3>
                                         <small>Total Staked UVCX</small>
@@ -100,20 +125,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <a class="btn btn-block btn-md btn-dark roundedCorners" href="https://blockscout.com/etc/mainnet/address/0xd6dF0C579f2A65049a893fDaEC9fCE098CC19F87/contracts" target="_blank">View Contract</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <br />
                     </div>
                 </div>
-                <br />
-                
-                
                 
                 <div class="row">
                     <!-- Stake SUVC -->
@@ -124,10 +139,15 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-left">
-                                            <p>100 Tokens Minimum</p>
                                             <label>UVCX to Stake: </label>
                                             <input type="number" class="form-control" placeholder="100" id="freezeAmount" /><br />
                                             
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <p>100 Tokens Minimum</p>
                                         </div>
                                     </div>
                                 </div>
@@ -153,10 +173,14 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col text-left">
-                                            <p>1% Unstake Tax</p>
                                             <label>UVCX to Unstake: </label>
                                             <input type="number" class="form-control" placeholder="100" id="unfreezeAmount" /><br />
-                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <p>1% Unstake Tax</p>
                                         </div>
                                     </div>
                                 </div>
@@ -252,6 +276,53 @@
                 </div>
             </div>
         </footer>
+        
+        <!-- MODALS -->
+        <div class="modal glassPanel" id="detailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content glassPanel roundedCorners">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header glassPanel rcTop text-white">
+                        <h4 class="modal-title">Balance Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body glassPanel text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3><img id="tokenIcon" src="assets/img/logo.png" width="25px" height="25px" /> <span id="tokenBalance">0</span> <span id="tokenSymbol">XXX</span></h3>
+                                    <small>Your Balance</small>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-md btn-success roundedCorners" href="#" target="_blank" id="tokenTradeLink">Trade on Saturn DEX</a>
+                                </div>
+                                
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-md btn-warning roundedCorners" href="#" target="_blank" id="tokenContractLink">View Contract</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer glassPanel rcBottom text-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center"><button type="button" class="btn btn-block btn-danger roundedCorners" data-dismiss="modal">Close</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br />
         <br />
         <br />
@@ -270,7 +341,7 @@
         <script src="assets/js/lodash.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
 
-        <script src="assets/lib/universalcoin-staking.js"></script>
+        <script src="assets/lib/tokens.js"></script>
         <script src="assets/lib/metamask-adapter.js"></script>
     </body>
 </html>

@@ -3,27 +3,9 @@
 }
 
 body {
-    background-color: #000;
-}
-
-.wallpaper {
-    background: rgb(221,221,221);
-    background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(20,20,20,1) 100%);
-}
-
-.uvcWallpaper {
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(62,62,62,1) 30%, rgba(93,255,128,1) 100%); 
-}
-
-.uvcxWallpaper {
-    background: rgb(214,54,54);
-    background: linear-gradient(180deg, rgba(214,54,54,1) 0%, rgba(20,20,20,1) 100%); 
-}
-
-.homeWallpaper {
-    background: rgb(54,61,214);
-    background: linear-gradient(180deg, rgba(54,61,214,1) 0%, rgba(20,20,20,1) 100%); 
+    background: linear-gradient(-45deg, rgba(255,198,23,1) 30%, rgba(167,0,191,1) 100%);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
 .redBorder {border: solid #ff004e;}
@@ -75,3 +57,15 @@ body {
 
 .roundedCorners {border-radius: 10px 10px 10px 10px;}
 .rcNone         {border-radius:  0px  0px  0px  0px;}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
