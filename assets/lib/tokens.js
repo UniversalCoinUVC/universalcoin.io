@@ -1,7 +1,6 @@
 var uvcContractAddress  = "0x76d0184cf511788032a74a1fb91146e63f43dd53";
 var uvcxContractAddress = "0xd6df0c579f2a65049a893fdaec9fce098cc19f87";
 var strnContractAddress = "0xac55641cbb734bdf6510d1bbd62e240c2409040f";
-var fwtContractAddress = "0xf71c38cb53478b2aa7b06f1116b8b7121df2ded4";
 
 var tokenABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"}];
 
@@ -19,7 +18,6 @@ var UVC  = web3.eth.contract(tokenABI).at(uvcContractAddress);
 var UVCX = web3.eth.contract(tokenABI).at(uvcxContractAddress);
 var UVCXStaking = web3.eth.contract(stakingABI).at(uvcxContractAddress);
 var STRN = web3.eth.contract(tokenABI).at(strnContractAddress);
-var FWT = web3.eth.contract(tokenABI).at(fwtContractAddress);
 
 $(document).ready(init);
 
@@ -106,16 +104,6 @@ function update() {
             console.log(error);
         }
     });
-    
-    FWT.balanceOf.call(web3.eth.accounts[0], function(error, info) {
-        if (!error) {
-            var fwtBalanceDisplay = (info / 10**18);
-            console.log(info);
-            $('.fwtBalance').text(numberWithCommas(fwtBalanceDisplay.toFixed(0)));
-        } else {
-            console.log(error);
-        }
-    });
 }
 
 function numberWithCommas(x) {
@@ -171,14 +159,6 @@ function showTokenModal(token) {
         tokenContract = "0xac55641cbb734bdf6510d1bbd62e240c2409040f";
         tokenImagePath = "https://github.saturn.network/etc/logo/saturn.png";
         console.log("STRN is Set");
-    }
-    
-    if (token == FWT) {
-        tokenName = "FluxWallet Token";
-        tokenSymbol = "FWT";
-        tokenContract = "0xf71c38cb53478b2aa7b06f1116b8b7121df2ded4";
-        tokenImagePath = "https://github.saturn.network/etc/logo/FTW.png";
-        console.log("FWT is Set");
     }
     
     $('#tokenIcon').replaceWith("<img src='"+tokenImagePath+"' id='tokenIcon' width='25px' height='25px' />");
