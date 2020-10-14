@@ -79,7 +79,7 @@ function update() {
         if (!error) {
             var uvcBalanceDisplay = (info / 10**5);
             console.log(info);
-            $('.uvcBalance').text(numberWithCommas(uvcBalanceDisplay.toFixed(0)));
+            $('.uvcBalance').text(numberWithCommas(Math.floor(uvcBalanceDisplay)));
         } else {
             console.log(error);
         }
@@ -89,7 +89,7 @@ function update() {
         if (!error) {
             var uvcxBalanceDisplay = (info / 10**18);
             console.log(info);
-            $('.uvcxBalance').text(numberWithCommas(uvcxBalanceDisplay.toFixed(0)));
+            $('.uvcxBalance').text(numberWithCommas(Math.floor(uvcxBalanceDisplay)));
         } else {
             console.log(error);
         }
@@ -99,7 +99,7 @@ function update() {
         if (!error) {
             var strnBalanceDisplay = (info / 10**4);
             console.log(info);
-            $('.strnBalance').text(numberWithCommas(strnBalanceDisplay.toFixed(0)));
+            $('.strnBalance').text(numberWithCommas(Math.floor(strnBalanceDisplay)));
         } else {
             console.log(error);
         }
