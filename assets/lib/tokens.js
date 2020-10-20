@@ -44,20 +44,114 @@ function getStakingData() {
 $('#transfer').click(function() {
 		var amount = parseFloat($('#transferAmount').val());
 		var to = $('#transferReceiver').val();
-		if (amount > 0 && to.length == 42) {UVCXStaking.transfer(to, web3.toWei(amount, 'ether'), function(error, hash) {if (!error) {console.log(hash);} else {console.log(error);}});}
+		if (amount > 0 && to.length == 42) {
+            UVCXStaking.transfer(to, web3.toWei(amount, 'ether'), function(error, hash) {
+                if (!error) {
+                    console.log(hash);
+                    alertify.success("Transferring " + amount + " UVCX...")
+                } else {
+                    console.log(error);
+                    alertify.error("Transfer Failed!")
+                }
+            });
+        }
 	});
 
 	$('#freeze').click(function() {
 		var amount = parseFloat($('#freezeAmount').val());
-		if (amount > 0) {UVCXStaking.freeze(web3.toWei(amount, 'ether'), function(error, hash) {if (!error) {console.log(hash);} else {console.log(error);}});}
+		if (amount > 0) {
+            UVCXStaking.freeze(web3.toWei(amount, 'ether'), function(error, hash) {
+                if (!error) {
+                    console.log(hash);
+                    alertify.success("Staking " + amount + " UVCX...")
+                } else {
+                    console.log(error);
+                    alertify.error("Staking Failed!")
+                }
+            });
+        }
+	});
+
+    $('#freezemax').click(function() {
+        var wholeStake;
+        
+        UVCX.balanceOf.call(web3.eth.accounts[0], function(error, info) {
+            if (!error) {
+                wholeStake = info;
+                if (wholeStake > 0) {
+                    UVCXStaking.freeze(wholeStake, function(error, hash) {
+                        if (!error) {
+                            console.log(hash);
+                            alertify.success("Staking all your UVCX...")
+                        } else {
+                            console.log(error);
+                            alertify.error("Staking Failed!")
+                        }
+                    })
+                } else {
+                    alertify.error("No UVCX to Stake!");
+                }
+            } else {
+                console.log(error); 
+            }
+        });
+        
+        
 	});
 
 	$('#unfreeze').click(function() {
 		var amount = parseFloat($('#unfreezeAmount').val());
-		if (amount > 0) {UVCXStaking.unfreeze(web3.toWei(amount, 'ether'), function(error, hash) {if (!error) {console.log(hash);} else {console.log(error);}});}
+		if (amount > 0) {
+            UVCXStaking.unfreeze(web3.toWei(amount, 'ether'), function(error, hash) {
+                if (!error) {
+                    console.log(hash);
+                    alertify.success("Unstaking " + amount + " UVCX...")
+                } else {
+                    console.log(error);
+                    alertify.error("Unstaking Failed!")
+                }
+            });
+        }
 	});
 
-	$('#withdraw').click(function() {UVCXStaking.collect(function(error, hash) {if (!error) {console.log(hash);} else {console.log(error);}});});
+    $('#unfreezemax').click(function() {
+        var wholeUnstake;
+        
+		UVCXStaking.frozenOf.call(web3.eth.accounts[0], function(error, info) {
+            if (!error) {
+                wholeUnstake = info;
+                if (wholeUnstake > 0) {
+                    UVCXStaking.unfreeze(wholeUnstake, function(error, hash) {
+                        if (!error) {
+                            console.log(hash);
+                            alertify.success("Unstaking your UVCX...")
+                        } else {
+                            console.log(error);
+                            alertify.error("Unstaking Failed!")
+                        }
+                    })
+                } else {
+                    alertify.error("No UVCX Staked!")
+                }
+            } else {
+                console.log(error);
+            } 
+        })
+        
+        
+    });
+
+	$('#withdraw').click(function() {
+        UVCXStaking.collect(function(error, hash) {
+            if (!error) {
+                console.log(hash);
+                alertify.success("Withdrawing Earnings...")
+            } else {
+                console.log(error);
+                alertify.error("Withdraw Failed!")
+            }
+        });
+    });
 
 function update() {
     var account = web3.eth.accounts !== undefined && web3.eth.accounts[0] !== undefined ? web3.eth.accounts[0] : '0x0000000000000000000000000000000000000001';
